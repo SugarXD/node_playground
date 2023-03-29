@@ -27,31 +27,19 @@ ignorePatterns:
 ###############
 # Parser vars #
 ###############
-parser: '@typescript-eslint/parser'
+parser: 'babel-eslint'
 parserOptions:
   ecmaVersion: 2018
   sourceType: module
 
-###########
-# Plugins #
-###########
-plugins:
-  - '@typescript-eslint'
-
-#########
-# Rules #
-#########
-rules: { }
+extends:
+  # https://www.npmjs.com/package/eslint-config-airbnb-base
+  - airbnb
 
 ##############################
 # Overrides for JSON parsing #
 ##############################
-overrides:
-  - files:
-      - "*.js"
-    extends:
-      - "airbnb"
-   
+overrides:  
   # JSON files
   - files:
       - "*.json"
