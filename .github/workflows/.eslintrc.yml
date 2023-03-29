@@ -47,10 +47,10 @@ rules: { }
 # Overrides for JSON parsing #
 ##############################
 overrides:
-- files:
-  - ".js"
- extends:
-   - "airbnb"
+  - files:
+      - "*.js"
+    extends:
+      - "airbnb"
    
   # JSON files
   - files:
