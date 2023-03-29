@@ -11,6 +11,7 @@ globals:
 ignorePatterns:
   - "!.*"
   - "**/node_modules/.*"
+  - "*.json"
 
 parserOptions:
   ecmaVersion: 2020
