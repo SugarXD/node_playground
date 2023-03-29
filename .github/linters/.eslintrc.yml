@@ -4,9 +4,6 @@ env:
   es6: true
   jest: true
 
-plugins:
-   - async-await
-
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
