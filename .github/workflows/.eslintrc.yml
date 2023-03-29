@@ -1,3 +1,45 @@
+# #############################
+# #############################
+# ## JavaScript Linter rules ##
+# #############################
+# #############################
+
+# ############
+# # Env Vars #
+# ############
+# env:
+#   browser: true
+#   es6: true
+#   jest: true
+
+# plugins:
+#    - async-await
+
+# ###############
+# # Global Vars #
+# ###############
+# globals:
+#   Atomics: readonly
+#   SharedArrayBuffer: readonly
+
+# ignorePatterns:
+#   - "!.*"
+#   - "**/node_modules/.*"
+
+# ###############
+# # Parser vars #
+# ###############
+# parserOptions:
+#   ecmaVersion: 2020
+#   sourceType: module
+
+# extends:
+#   # http://eslint.org/docs/user-guide/configuring#using-eslintrecommended
+#   - eslint:recommended
+#   # https://www.npmjs.com/package/eslint-config-airbnb-base
+#   - airbnb-base
+
+---
 #############################
 #############################
 ## JavaScript Linter rules ##
@@ -11,9 +53,6 @@ env:
   browser: true
   es6: true
   jest: true
-
-plugins:
-   - async-await
 
 ###############
 # Global Vars #
@@ -29,12 +68,50 @@ ignorePatterns:
 ###############
 # Parser vars #
 ###############
+parser: '@typescript-eslint/parser'
 parserOptions:
-  ecmaVersion: 2020
+  ecmaVersion: 2018
   sourceType: module
 
-extends:
-  # http://eslint.org/docs/user-guide/configuring#using-eslintrecommended
-  - eslint:recommended
-  # https://www.npmjs.com/package/eslint-config-airbnb-base
-  - airbnb/base
+###########
+# Plugins #
+###########
+plugins:
+  - '@typescript-eslint'
+
+#########
+# Rules #
+#########
+rules: { }
+
+##############################
+# Overrides for JSON parsing #
+##############################
+overrides:
+
+  # JSON files
+  - files:
+      - "*.json"
+    extends:
+      - plugin:jsonc/recommended-with-json
+    parser: jsonc-eslint-parser
+    parserOptions:
+      jsonSyntax: JSON
+
+  # JSONC files
+  - files:
+      - "*.jsonc"
+    extends:
+      - plugin:jsonc/recommended-with-jsonc
+    parser: jsonc-eslint-parser
+    parserOptions:
+      jsonSyntax: JSONC
+
+  # JSON5 files
+  - files:
+      - "*.json5"
+    extends:
+      - plugin:jsonc/recommended-with-json5
+    parser: jsonc-eslint-parser
+    parserOptions:
+      jsonSyntax: JSON5
