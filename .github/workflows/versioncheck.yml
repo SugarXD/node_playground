@@ -1,3 +1,6 @@
+- name: Version Check
+  uses: EndBug/version-check@v2.1.1
+
 - id: check # This will be the reference for getting the outputs.
   uses: EndBug/version-check@v2.1.1 # You can choose the version/branch you prefer.
 
@@ -11,21 +14,6 @@
     # commit message when you bump versions then you can omit this.
     # Default: false
     diff-search: true
-
-    # You can use this to indicate a custom path to your `package.json`. If you keep
-    # your package file in the root directory (which is the usual approach) you can
-    # omit this.
-    # Default: package.json
-    # file-name: ./your/own/dir/someName.json
-
-    # You can put your bearer GitHub token here. This is needed only when running
-    # the action on private repostiories, if you're running it on a public repo you
-    # can omit this.
-    # If you need to set this, you can use the built-in `GITHUB_TOKEN` secret that 
-    # GitHub generates for your repo's actions: you can find more info about it here:
-    # https://help.github.com/en/github/automating-your-workflow-with-github-actions/virtual-environments-for-github-actions#github_token-secret
-    # Default: ''
-    # token: ${{ secrets.GITHUB_TOKEN }}
 
     # You can use this to make the action use an URL to get the package file,
     # instead of using the one in your repo.
@@ -43,7 +31,7 @@
     # Accepted values are 'new' (if you want that version to be the "added" one) and
     # 'old' (to make it the "deleted" one).
     # Default: ''
-    # assume-same-version: old
+    assume-same-version: old
 
     # You can use this option to make the action check the local version against the
     # remote one (from the provided URL, see the `file-url` option).
