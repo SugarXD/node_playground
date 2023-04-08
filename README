@@ -1,0 +1,4 @@
+# Commands
+## Docker
+ `docker build . -t node_playground`
+ `docker run -p 3000:3000 node_playground`
